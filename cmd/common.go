@@ -63,7 +63,7 @@ func newCookieJar(machine machine.Machine) http.CookieJar {
 func newKeychain(machine machine.Machine, logger log.Logger, interactive bool) keychain.Keychain {
 	ring := util.Must(keyring.Open(keyring.Config{
 		AllowedBackends: []keyring.BackendType{
-			//keyring.KeychainBackend,
+			//keyring.KeychainBackend, we dont want to use keychain
 			keyring.SecretServiceBackend,
 			keyring.FileBackend,
 		},
